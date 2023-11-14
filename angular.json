@@ -9,6 +9,18 @@
       "root": "",
       "sourceRoot": "src",
       "prefix": "app",
+      "i18n": {
+        "locales": {
+          "en": {
+            "translation": "src/locale/messages.en.xlf",
+            "baseHref": "/en/"
+          },
+          "es-AR": {
+            "translation": "src/locale/messages.es-AR.xlf",
+            "baseHref": ""
+          }
+        }
+      },
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
@@ -48,7 +60,23 @@
               ],
               "outputHashing": "all"
             },
-            "development": {
+            "development-es": {
+              "localize": [ "es-AR" ],
+              "buildOptimizer": false,
+              "optimization": false,
+              "vendorChunk": true,
+              "extractLicenses": false,
+              "sourceMap": true,
+              "namedChunks": true,
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.development.ts"
+                }
+              ]
+            },
+            "development-en": {
+              "localize": [ "en" ],
               "buildOptimizer": false,
               "optimization": false,
               "vendorChunk": true,
@@ -68,14 +96,17 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
+            "development-es": {
+              "browserTarget": "parcial-3:build:development-es"
+            },
+            "development-en": {
+              "browserTarget": "parcial-3:build:development-en"
+            },
             "production": {
               "browserTarget": "parcial-3:build:production"
-            },
-            "development": {
-              "browserTarget": "parcial-3:build:development"
             }
           },
-          "defaultConfiguration": "development"
+          "defaultConfiguration": "development-es"
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",

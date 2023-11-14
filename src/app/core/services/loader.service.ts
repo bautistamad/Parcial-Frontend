@@ -2,16 +2,14 @@ import { Injectable } from '@angular/core';
 import { Observable, Subject } from 'rxjs';
 
 
-export declare type Loader = { 
+export declare type Loader = {
   loaded: boolean
 };
-
 
 @Injectable({
   providedIn: 'root'
 })
 export class LoaderService {
-
 
   private _subject = new Subject<Loader>();
 
