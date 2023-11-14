@@ -1,17 +1,17 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { MainRoutingModule } from './main-routing.module';
 import { MainComponent } from './pages/main/main.component';
+import { Routes } from '@angular/router';
 
+const routes: Routes = [
+  {path: '', component: MainComponent }
+];
 
 
 @NgModule({
-  declarations: [
-    MainComponent
-  ],
+  declarations: [],
   imports: [
-    CommonModule,
-    MainRoutingModule
+    CommonModule
   ]
 })
-export class MainModule { }
+export class MainRoutingModule { }
