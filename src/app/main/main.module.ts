@@ -5,11 +5,14 @@ import { TiposResourceService } from './api/resources/tipos-resource.service';
 import { TemasResourceService } from './api/resources/temas-resource.service';
 import { SplashPageComponent } from './splash-page/splash-page.component';
 import { MainComponent } from './main.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FormComponent } from './pages/form/form.component';
 
 @NgModule({
   declarations: [
     MainComponent,
-    SplashPageComponent
+    SplashPageComponent,
+    FormComponent
   ],
   providers: [
     TiposResourceService,
@@ -17,7 +20,9 @@ import { MainComponent } from './main.component';
   ],
   imports: [
     CommonModule,
-    MainRoutingModule
+    MainRoutingModule,
+    FormsModule,
+    ReactiveFormsModule,
   ]
 })
 export class MainModule { }

@@ -14,8 +14,8 @@ export class SugerenciasResourceService extends Resource {
   }
 
   @ResourceAction({
-    path: '/persona',
-    method: ResourceRequestMethod.Post,
+    path: '/sugerencias',
+    method: ResourceRequestMethod.Put,
   })
-  post!: IResourceMethodObservable< ISugerencia , void>;
+  put!: IResourceMethodObservable< ISugerencia , void>;
 }

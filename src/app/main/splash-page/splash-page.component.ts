@@ -11,7 +11,7 @@ export class SplashPageComponent {
 
   ngOnInit(): void {
     setTimeout(() => {
-      this.router.navigate(['/main']); // Asegúrate de tener esta ruta configurada
-    }, 3000); // 3000 milisegundos = 3 segundos
+      this.router.navigate(['/main']);
+    }, 3000);
   }
 }

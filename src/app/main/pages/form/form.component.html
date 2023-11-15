@@ -1,0 +1,43 @@
+<!-- <app-componente-reusable [titulo]="'Formulario de carga de datos'"> -->
+    <!-- <body class="container" [ngSwitch]="showInfo"> -->
+        <body class="container">
+            <!-- <ng-container *ngSwitchCase="false"> -->
+            <h3>Formulario de carga de datos</h3>
+            <!-- <form [formGroup]="form" class="col-12" (ngSubmit)="agregarPersona()" invalidate></form> -->
+            <form [formGroup]="form" class="col-12" invalidate>
+                <div class="row">
+                    <div class="col-12 col-md-6 mb-3">
+                        <label for="itiposervicio" i18n-label>Tipo de Servicio</label>
+                        <select id="itiposervicio" formControlName="tipoServicio" class="form-select" >
+                            <!-- <option i18n-option value="">Debe seleccionar una nacionalidad</option> -->
+                            <option [value]="t.codTipoServicio" *ngFor="let t of tipos" i18n-option>{{t.tipoServicio}}</option>
+                        </select>
+                    </div>
+                </div>
+                <!-- <div class="row">
+                  <div class="col-12 col-md-6 mb-3">
+                      <label for="inacionalidad" i18n-label>Tema</label>
+                      <select id="inacionalidad" formControlName="codNacionalidad" class="form-select" >
+                          <option i18n-option value="">Debe seleccionar una nacionalidad</option>
+                          <option [value]="n.codigo" *ngFor="let n of nacionalidades" i18n-option>{{n.nombre}}</option>
+                      </select>
+                  </div>
+              </div> -->
+                <div class="row">
+                    <div class="col-12 text-left"><b class="text-secondary">Otros Datos</b></div>
+                </div>
+                <div class="row">
+                    <div class="col-12">
+                        <button type="submit" class="btn btn-success">Guardar</button>
+                        <button type="button" class="btn btn-danger ms-2" routerLink="../main">Cancelar</button>
+                    </div>
+                </div>
+            </form>
+            <!-- </ng-container> -->
+            <!-- <ng-container *ngSwitchCase="true">
+                <h3>Gracias! {{form.controls['apellido'].value}}, {{form.controls['nombre'].value}}</h3>
+                <br>
+                <button type="button" class="btn btn-info" (click)="cancelar()"> Cancelar </button>
+            </ng-container> -->
+        </body>
+      <!-- </app-componente-reusable> -->
