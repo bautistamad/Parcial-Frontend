@@ -8,24 +8,28 @@
                 <div class="row">
                     <div class="col-12 col-md-6 mb-3">
                         <label for="itiposervicio" i18n-label>Tipo de Servicio</label>
-                        <select id="itiposervicio" formControlName="tipoServicio" class="form-select" >
+                        <select id="itiposervicio" formControlName="tipoServicio" class="form-select" (change)="onChange($event)" >
                             <!-- <option i18n-option value="">Debe seleccionar una nacionalidad</option> -->
                             <option [value]="t.codTipoServicio" *ngFor="let t of tipos" i18n-option>{{t.tipoServicio}}</option>
                         </select>
                     </div>
                 </div>
-                <!-- <div class="row">
+                <div class="row">
                   <div class="col-12 col-md-6 mb-3">
-                      <label for="inacionalidad" i18n-label>Tema</label>
-                      <select id="inacionalidad" formControlName="codNacionalidad" class="form-select" >
-                          <option i18n-option value="">Debe seleccionar una nacionalidad</option>
-                          <option [value]="n.codigo" *ngFor="let n of nacionalidades" i18n-option>{{n.nombre}}</option>
+                      <label for="itemas" i18n-label>Tema</label>
+                      <select id="itemas" formControlName="temas" class="form-select" >
+                          <option i18n-option value=""></option>
+                          <option [value]="t.nroTema" *ngFor="let t of temas" i18n-option>{{t.tema}}</option>
                       </select>
                   </div>
-              </div> -->
-                <div class="row">
-                    <div class="col-12 text-left"><b class="text-secondary">Otros Datos</b></div>
-                </div>
+              </div>
+              <div class="row">
+				<div class="col-12 mb-3">
+					<label for="isugerencia">Sugerencia</label>
+					<textarea cols="50" rows="5" id="isugerencia" formControlName="sugerencia" class="form-control"
+						placeholder="Mis sugerencias son..."></textarea>
+				</div>
+			</div>
                 <div class="row">
                     <div class="col-12">
                         <button type="submit" class="btn btn-success">Guardar</button>
