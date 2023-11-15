@@ -7,6 +7,7 @@ import { SplashPageComponent } from './splash-page/splash-page.component';
 import { MainComponent } from './main.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FormComponent } from './pages/form/form.component';
+import { SugerenciasResourceService } from './api/resources/sugerencias-resource.service';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { FormComponent } from './pages/form/form.component';
   ],
   providers: [
     TiposResourceService,
-    TemasResourceService
+    TemasResourceService,
+    SugerenciasResourceService
   ],
   imports: [
     CommonModule,

@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { IResourceMethodObservable, Resource, ResourceAction, ResourceHandler, ResourceParams, ResourceRequestMethod } from '@ngx-resource/core';
+import { IResourceMethodObservable, Resource, ResourceAction, ResourceHandler, ResourceParams, ResourceRequestBodyType, ResourceRequestMethod } from '@ngx-resource/core';
 import { environment } from 'src/environments/environment';
 import { ISugerencia } from '../models/i-sugerencia';
 
@@ -14,8 +14,9 @@ export class SugerenciasResourceService extends Resource {
   }
 
   @ResourceAction({
-    path: '/sugerencias',
+    path: '/sugerencia',
     method: ResourceRequestMethod.Put,
+    requestBodyType: ResourceRequestBodyType.JSON
   })
   put!: IResourceMethodObservable< ISugerencia , void>;
 }

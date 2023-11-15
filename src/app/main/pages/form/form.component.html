@@ -3,24 +3,28 @@
         <body class="container">
             <!-- <ng-container *ngSwitchCase="false"> -->
             <h3>Formulario de carga de datos</h3>
-            <!-- <form [formGroup]="form" class="col-12" (ngSubmit)="agregarPersona()" invalidate></form> -->
-            <form [formGroup]="form" class="col-12" invalidate>
+            <form [formGroup]="form" class="col-12" (ngSubmit)="insSuggestion()" invalidate>
                 <div class="row">
                     <div class="col-12 col-md-6 mb-3">
                         <label for="itiposervicio" i18n-label>Tipo de Servicio</label>
-                        <select id="itiposervicio" formControlName="tipoServicio" class="form-select" (change)="onChange($event)" >
-                            <!-- <option i18n-option value="">Debe seleccionar una nacionalidad</option> -->
+                        <select id="itiposervicio" formControlName="codTipoServicio" class="form-select" (change)="onChange($event)" >
                             <option [value]="t.codTipoServicio" *ngFor="let t of tipos" i18n-option>{{t.tipoServicio}}</option>
                         </select>
+                        <div class="text-danger" *ngIf="submitted && form.controls['codTipoServicio'].errors?.['required']">
+                            Debes informar el tipo de servicio...
+                        </div>
                     </div>
                 </div>
                 <div class="row">
                   <div class="col-12 col-md-6 mb-3">
                       <label for="itemas" i18n-label>Tema</label>
-                      <select id="itemas" formControlName="temas" class="form-select" >
+                      <select id="itemas" formControlName="numeroTema" class="form-select" >
                           <option i18n-option value=""></option>
                           <option [value]="t.nroTema" *ngFor="let t of temas" i18n-option>{{t.tema}}</option>
                       </select>
+                      <div class="text-danger" *ngIf="submitted && form.controls['numeroTema'].errors?.['required']">
+                        Debes informar el tema...
+                    </div>
                   </div>
               </div>
               <div class="row">
