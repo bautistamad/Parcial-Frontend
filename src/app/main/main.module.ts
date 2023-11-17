@@ -8,12 +8,14 @@ import { MainComponent } from './main.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FormComponent } from './pages/form/form.component';
 import { SugerenciasResourceService } from './api/resources/sugerencias-resource.service';
+import { SuccessComponent } from './pages/success/success.component';
 
 @NgModule({
   declarations: [
     MainComponent,
     SplashPageComponent,
-    FormComponent
+    FormComponent,
+    SuccessComponent
   ],
   providers: [
     TiposResourceService,

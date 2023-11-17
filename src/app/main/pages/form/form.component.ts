@@ -68,9 +68,9 @@ export class FormComponent {
     })
   }
 
-  onChange(value: any) { 
+  onChange(value: any) {
     let codTipoServicio: string = value.target.value;
-    
+
     this.temas = [];
 
     if (codTipoServicio === 'XX') {
@@ -85,7 +85,7 @@ export class FormComponent {
           codTipoServicio: codTipoServicio,
           tema: $localize`Seleccione un tema`,
           nroTema: "00"
-        }        
+        }
         this.temas.push(tema);
         this.temas.push(...temas);
         this.form.patchValue({numeroTema: tema.nroTema})
@@ -98,7 +98,7 @@ export class FormComponent {
   }
 
   insSuggestion(): void {
-    console.log(" Inserte una sugerencia ")
+    // console.log(" Inserte una sugerencia ")
 
     // Arreglar para que verifique los datos
 
@@ -135,4 +135,6 @@ export class FormComponent {
     }
 
   }
+
+  
 }
