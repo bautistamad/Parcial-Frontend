@@ -4,6 +4,26 @@
             <!-- <ng-container *ngSwitchCase="false"> -->
             <h3>Formulario de carga de datos</h3>
             <form [formGroup]="form" class="col-12" (ngSubmit)="insSuggestion()" invalidate>
+                <div class="col-12 col-md-2 mb-3">
+                    <label for="iSugerenciaS">Autenticarse</label>
+                    <div class="form-check">
+                        <input type="radio" class="form-check-input" formControlName="identificacion" value="Si" id="iIdentificacionS">
+                        <label class="form-check-label" for="iIdentificacionS">Si</label>
+                    </div>
+                    <div class="form-check">
+                        <input type="radio" class="form-check-input" formControlName="identificacion" value="No" id="iIdentificacionN">
+                        <label class="form-check-label" for="iIdentificacionN">No</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12 mb-3">
+                        <label for="email">Correo Electrónico Adicional</label>
+                        <input type="email" formControlName="email" class="form-control" id="email" placeholder="Ingresa un correo electrónico">
+                    </div>
+                    <div class="text-danger" *ngIf="submitted && form.controls['email'].errors?.['required']">
+                        Debes informar un email...
+                    </div>
+                </div>
                 <div class="row">
                     <div class="col-12 col-md-6 mb-3">
                         <label for="itiposervicio" i18n-label>Tipo de Servicio</label>
@@ -27,6 +47,10 @@
                     </div>
                   </div>
               </div>
+              <div class="col-12 col-md-6 mb-3" *ngIf="mostrarOtros">
+                <input type="text" id="itema" formControlName="tema" class="form-control" required
+                    placeholder="Informa el tema" value="" maxlength="100">
+            </div>
               <div class="row">
 				<div class="col-12 mb-3">
 					<label for="isugerencia">Sugerencia</label>
@@ -36,7 +60,7 @@
 			</div>
                 <div class="row">
                     <div class="col-12">
-                        <button type="submit" class="btn btn-success" routerLink="success">Guardar</button>
+                        <button type="submit" class="btn btn-success" >Guardar</button>
                         <button type="button" class="btn btn-danger ms-2" (click)="cancelar()">Cancelar</button>
 
                     </div>

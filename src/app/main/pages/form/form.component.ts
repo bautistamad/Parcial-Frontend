@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { FormArray, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { ITemas } from '../../api/models/i-temas';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ITipos } from '../../api/models/i-tipos';
@@ -18,6 +18,7 @@ export class FormComponent {
   temas: ITemas[] = [];
   tipos: ITipos[] = [];
   submitted: boolean = false;
+  mostrarOtros: boolean = false;
 
 
   constructor(private _fb: FormBuilder,
@@ -36,8 +37,13 @@ export class FormComponent {
     this.form = this._fb.group({
       codTipoServicio: new FormControl('',[Validators.required]),
       numeroTema: new FormControl('',[Validators.required]),
-      sugerencia: new FormControl('',[Validators.required])
+      sugerencia: new FormControl('',[Validators.required]),
+      identificacion: new FormControl('Si', [Validators.required]),
+      email: new FormControl({ value: '', disabled: false }, [Validators.email, Validators.required]),
+      tema: new FormControl('', [Validators.required])
+
     })
+    this.escucharCambiosRadio();
   }
 
   private vaciarForm(): void {
@@ -97,35 +103,35 @@ export class FormComponent {
     })
   }
 
+
+  escucharCambiosRadio(): void {
+    this.form.controls['identificacion'].valueChanges.subscribe(valor => {
+      if (valor  == 'No') {
+        this.form.controls['email'].disable();
+        this.form.controls['email'].reset();
+      } else {
+        this.form.controls['email'].enable();
+      }
+    });
+    this.form.controls['numeroTema'].valueChanges.subscribe(valor => {
+      this.mostrarOtros = valor === '0';
+      if (valor == '0' ){
+        this.form.controls['tema'].enable();
+      } else {
+        this.form.controls['tema'].disable();
+      }
+    })
+  }
+
+
   insSuggestion(): void {
-    // console.log(" Inserte una sugerencia ")
-
-    // Arreglar para que verifique los datos
-
-    // this.submitted = true;
-    // if (this.form.valid) {
-    //   // this.pageAdded.emit(this.form.value);
-    //   console.log(this.form.value);
-    //   this.reset();
-    // }
-
-    // POST
-
+    console.log("INGRESE A SUGERENCIA")
     this.submitted = true;
-    //console.log("form ",JSON.stringify(this.form.value));
-    // const { formData } = this.form.value;
-
-    // let sugerencia: ISugerencia = {
-    //   codTipoServicio: this.form.value['tipoServicio'],
-    //   numeroTema:this.form.value['temas'],
-    //   sugerencia: this.form.value['sugerencia']
-    // }
-    // console.log("sugerencia" + JSON.stringify(sugerencia))
     if (this.form.valid) {
       this._sugService.put(this.form.value).subscribe({
         next: () => {
           console.log("Insercion exitosa");
-          // this.router.navigate(['']);
+          this.router.navigate(['/main/success']);
         },
         error: (error) => {
           console.log(error)

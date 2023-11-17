@@ -4,7 +4,7 @@ import { ResolveFn } from '@angular/router';
 import { tiposResolver } from './tipos.resolver';
 
 describe('tiposResolver', () => {
-  const executeResolver: ResolveFn<boolean> = (...resolverParameters) => 
+  const executeResolver: ResolveFn<boolean> = (...resolverParameters) =>
       TestBed.runInInjectionContext(() => tiposResolver(...resolverParameters));
 
   beforeEach(() => {
