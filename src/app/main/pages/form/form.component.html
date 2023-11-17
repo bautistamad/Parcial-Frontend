@@ -2,72 +2,72 @@
     <!-- <body class="container" [ngSwitch]="showInfo"> -->
         <body class="container">
             <!-- <ng-container *ngSwitchCase="false"> -->
-            <h3>Formulario de carga de datos</h3>
+            <h3 i18n>Formulario de carga de datos</h3>
             <form [formGroup]="form" class="col-12" (ngSubmit)="insSuggestion()" invalidate>
                 <div class="col-12 col-md-2 mb-3">
-                    <label for="iSugerenciaS">Autenticarse</label>
+                    <label for="iSugerenciaS" i18n>Autenticarse</label>
                     <div class="form-check">
                         <input type="radio" class="form-check-input" formControlName="identificacion" value="Si" id="iIdentificacionS">
-                        <label class="form-check-label" for="iIdentificacionS">Si</label>
+                        <label class="form-check-label" for="iIdentificacionS" i18n>Si</label>
                     </div>
                     <div class="form-check">
                         <input type="radio" class="form-check-input" formControlName="identificacion" value="No" id="iIdentificacionN">
-                        <label class="form-check-label" for="iIdentificacionN">No</label>
+                        <label class="form-check-label" for="iIdentificacionN" i18n>No</label>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-12 mb-3">
-                        <label for="email">Correo Electrónico Adicional</label>
-                        <input type="email" formControlName="email" class="form-control" id="email" placeholder="Ingresa un correo electrónico">
+                        <label for="email" i18n>Correo Electrónico Adicional</label>
+                        <input type="email" formControlName="email" class="form-control" id="email" i18n-placeholder="Ingresa un correo electrónico" >
                     </div>
-                    <div class="text-danger" *ngIf="submitted && form.controls['email'].errors?.['required']">
+                    <div class="text-danger" *ngIf="submitted && form.controls['email'].errors?.['required']" i18n>
                         Debes informar un email...
                     </div>
-                    <div class="text-danger" *ngIf="submitted && form.controls['email'].errors?.['email']">
+                    <div class="text-danger" *ngIf="submitted && form.controls['email'].errors?.['email']" i18n>
                         Correo invalido...
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-12 col-md-6 mb-3">
-                        <label for="itiposervicio" i18n-label>Tipo de Servicio</label>
+                        <label for="itiposervicio" i18n>Tipo de Servicio</label>
                         <select id="itiposervicio" formControlName="codTipoServicio" class="form-select" (change)="onChange($event)" >
                             <option [value]="t.codTipoServicio" *ngFor="let t of tipos" i18n-option>{{t.tipoServicio}}</option>
                         </select>
-                        <div class="text-danger" *ngIf="submitted && form.controls['codTipoServicio'].errors?.['required']">
+                        <div class="text-danger" *ngIf="submitted && form.controls['codTipoServicio'].errors?.['required']" i18n>
                             Debes informar el tipo de servicio...
                         </div>
                     </div>
                 </div>
                 <div class="row">
                   <div class="col-12 col-md-6 mb-3">
-                      <label for="itemas" i18n-label>Tema</label>
+                      <label for="itemas" i18n>Tema</label>
                       <select id="itemas" formControlName="numeroTema" class="form-select" >
                           <option i18n-option value=""></option>
                           <option [value]="t.nroTema" *ngFor="let t of temas" i18n-option>{{t.tema}}</option>
                       </select>
-                      <div class="text-danger" *ngIf="submitted && form.controls['numeroTema'].errors?.['required']">
+                      <div class="text-danger" *ngIf="submitted && form.controls['numeroTema'].errors?.['required']" i18n>
                         Debes informar el tema...
                     </div>
                   </div>
               </div>
               <div class="col-12 col-md-6 mb-3" *ngIf="mostrarOtros">
                 <input type="text" id="itema" formControlName="tema" class="form-control" required
-                    placeholder="Informa el tema" value="" maxlength="100">
+                i18n-placeholder="Informa el tema" value="" maxlength="100">
             </div>
-            <div class="text-danger" *ngIf="submitted && form.controls['tema'].errors?.['required']">
+            <div class="text-danger" *ngIf="submitted && form.controls['tema'].errors?.['required']" i18n>
                 Debes informar un tema...
             </div>
               <div class="row">
 				<div class="col-12 mb-3">
-					<label for="isugerencia">Sugerencia</label>
+					<label for="isugerencia" i18n>Sugerencia</label>
 					<textarea cols="50" rows="5" id="isugerencia" formControlName="sugerencia" class="form-control"
-						placeholder="Mis sugerencias son..."></textarea>
+                    i18n-placeholder="Mis sugerencias son..."></textarea>
 				</div>
 			</div>
                 <div class="row">
                     <div class="col-12">
-                        <button type="submit" class="btn btn-success" >Guardar</button>
-                        <button type="button" class="btn btn-danger ms-2" (click)="cancelar()">Cancelar</button>
+                        <button type="submit" class="btn btn-success" i18n >Guardar</button>
+                        <button type="button" class="btn btn-danger ms-2" (click)="cancelar()" i18n>Cancelar</button>
 
                     </div>
                 </div>

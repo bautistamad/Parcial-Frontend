@@ -211,13 +211,106 @@
           <context context-type="sourcefile">node_modules/src/ngb-config.ts</context>
           <context context-type="linenumber">13</context>
         </context-group>
-      </trans-unit><trans-unit id="2318365286834289791" datatype="html">
-        <source>Seleccione un tema</source><target state="new">Seleccione un tema</target>
+      </trans-unit><trans-unit id="2480783559871485681" datatype="html">
+        <source>Formulario de carga de datos</source><target state="new">Form</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/main/pages/form/form.component.html</context>
+          <context context-type="linenumber">5</context>
+        </context-group>
+      </trans-unit><trans-unit id="713985695496195194" datatype="html">
+        <source>Autenticarse</source><target state="final">Authenticate</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/main/pages/form/form.component.html</context>
+          <context context-type="linenumber">8</context>
+        </context-group>
+      </trans-unit><trans-unit id="514585342108001366" datatype="html">
+        <source>Si</source><target state="final">Yes</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/main/pages/form/form.component.html</context>
+          <context context-type="linenumber">11</context>
+        </context-group>
+      </trans-unit><trans-unit id="3542042671420335679" datatype="html">
+        <source>No</source><target state="final">No</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/main/pages/form/form.component.html</context>
+          <context context-type="linenumber">15</context>
+        </context-group>
+      </trans-unit><trans-unit id="7170667400234577928" datatype="html">
+        <source>Correo Electrónico Adicional</source><target state="final">Email</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/main/pages/form/form.component.html</context>
+          <context context-type="linenumber">20</context>
+        </context-group>
+      </trans-unit><trans-unit id="3735499573401847089" datatype="html">
+        <source> Debes informar un email... </source><target state="final"> Email required... </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/main/pages/form/form.component.html</context>
+          <context context-type="linenumber">23,25</context>
+        </context-group>
+      </trans-unit><trans-unit id="5675757575839339282" datatype="html">
+        <source> Correo invalido... </source><target state="final"> Invalid email... </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/main/pages/form/form.component.html</context>
+          <context context-type="linenumber">26,28</context>
+        </context-group>
+      </trans-unit><trans-unit id="1755383973685360450" datatype="html">
+        <source>Tipo de Servicio</source><target state="final">Type of service</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/main/pages/form/form.component.html</context>
+          <context context-type="linenumber">32</context>
+        </context-group>
+      </trans-unit><trans-unit id="6982528374400028997" datatype="html">
+        <source> Debes informar el tipo de servicio... </source><target state="final"> Select a type of service... </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/main/pages/form/form.component.html</context>
+          <context context-type="linenumber">36,38</context>
+        </context-group>
+      </trans-unit><trans-unit id="2473708249335920209" datatype="html">
+        <source>Tema</source><target state="final">Subject</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/main/pages/form/form.component.html</context>
+          <context context-type="linenumber">43</context>
+        </context-group>
+      </trans-unit><trans-unit id="1375277720421873593" datatype="html">
+        <source> Debes informar el tema... </source><target state="final"> Subject required... </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/main/pages/form/form.component.html</context>
+          <context context-type="linenumber">48,50</context>
+        </context-group>
+      </trans-unit><trans-unit id="1324439349505274197" datatype="html">
+        <source> Debes informar un tema... </source><target state="final"> Subject required... </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/main/pages/form/form.component.html</context>
+          <context context-type="linenumber">57,59</context>
+        </context-group>
+      </trans-unit><trans-unit id="8387905439490694058" datatype="html">
+        <source>Sugerencia</source><target state="final">Suggestion</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/main/pages/form/form.component.html</context>
+          <context context-type="linenumber">62</context>
+        </context-group>
+      </trans-unit><trans-unit id="1372173599787735409" datatype="html">
+        <source>Guardar</source><target state="final">Save</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/main/pages/form/form.component.html</context>
+          <context context-type="linenumber">69</context>
+        </context-group>
+      </trans-unit><trans-unit id="6402951927316857780" datatype="html">
+        <source>Cancelar</source><target state="final">Cancel</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/main/pages/form/form.component.html</context>
+          <context context-type="linenumber">70</context>
+        </context-group>
+      </trans-unit><trans-unit id="4023062347451322406" datatype="html">
+        <source>Selecciona un tipo de servicio</source><target state="final">Select a type of service</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/main/pages/form/form.component.ts</context>
-          <context context-type="linenumber">72</context>
+          <context context-type="linenumber">68</context>
         </context-group>
-      </trans-unit>
+      </trans-unit><trans-unit id="2318365286834289791" datatype="html">
+        <source>Seleccione un tema</source><target state="final">Select an option</target>
+        
+      <context-group purpose="location"><context context-type="sourcefile">src/app/main/pages/form/form.component.ts</context><context context-type="linenumber">92</context></context-group></trans-unit>
     </body>
   </file>
 </xliff>
