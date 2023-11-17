@@ -33,7 +33,7 @@
                         <select id="itiposervicio" formControlName="codTipoServicio" class="form-select" (change)="onChange($event)" >
                             <option [value]="t.codTipoServicio" *ngFor="let t of tipos" i18n-option>{{t.tipoServicio}}</option>
                         </select>
-                        <div class="text-danger" *ngIf="submitted && form.controls['codTipoServicio'].errors?.['required']" i18n>
+                        <div class="text-danger" *ngIf="submitted && form.controls['codTipoServicio'].value == 'XX'" i18n>
                             Debes informar el tipo de servicio...
                         </div>
                     </div>
@@ -45,7 +45,7 @@
                           <option i18n-option value=""></option>
                           <option [value]="t.nroTema" *ngFor="let t of temas" i18n-option>{{t.tema}}</option>
                       </select>
-                      <div class="text-danger" *ngIf="submitted && form.controls['numeroTema'].errors?.['required']" i18n>
+                      <div class="text-danger" *ngIf="submitted && form.controls['numeroTema'].value == '00'" i18n>
                         Debes informar el tema...
                     </div>
                   </div>
@@ -64,6 +64,9 @@
 					<textarea cols="50" rows="5" id="isugerencia" formControlName="sugerencia" class="form-control"
                     i18n-placeholder="Mis sugerencias son..."></textarea>
 				</div>
+                <div class="text-danger" *ngIf="submitted && form.controls['sugerencia'].errors?.['required']" i18n>
+                    Debes informar una sugerencia...
+                </div>
 			</div>
                 <div class="row">
                     <div class="col-12">

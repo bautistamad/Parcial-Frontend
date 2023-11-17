@@ -38,8 +38,8 @@ export class FormComponent {
       numeroTema: new FormControl('00',[Validators.required]),
       sugerencia: new FormControl('',[Validators.required]),
       identificacion: new FormControl('Si', [Validators.required]),
-      email: new FormControl({ value: '', disabled: false }, [Validators.email, Validators.required]),
-      tema: new FormControl('', [Validators.required])
+      email: new FormControl({ value: '', disabled: false}, [Validators.email, Validators.required]),
+      tema: new FormControl({ value: '', disabled: true}, [Validators.required])
 
     })
     this.escucharCambios();
