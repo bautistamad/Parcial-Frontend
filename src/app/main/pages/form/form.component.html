@@ -23,6 +23,9 @@
                     <div class="text-danger" *ngIf="submitted && form.controls['email'].errors?.['required']">
                         Debes informar un email...
                     </div>
+                    <div class="text-danger" *ngIf="submitted && form.controls['email'].errors?.['email']">
+                        Correo invalido...
+                    </div>
                 </div>
                 <div class="row">
                     <div class="col-12 col-md-6 mb-3">
@@ -50,6 +53,9 @@
               <div class="col-12 col-md-6 mb-3" *ngIf="mostrarOtros">
                 <input type="text" id="itema" formControlName="tema" class="form-control" required
                     placeholder="Informa el tema" value="" maxlength="100">
+            </div>
+            <div class="text-danger" *ngIf="submitted && form.controls['tema'].errors?.['required']">
+                Debes informar un tema...
             </div>
               <div class="row">
 				<div class="col-12 mb-3">
