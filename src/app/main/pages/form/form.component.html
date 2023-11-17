@@ -53,10 +53,11 @@
               <div class="col-12 col-md-6 mb-3" *ngIf="mostrarOtros">
                 <input type="text" id="itema" formControlName="tema" class="form-control" required
                 i18n-placeholder="Informa el tema" value="" maxlength="100">
+                <div class="text-danger" *ngIf="submitted && form.controls['tema'].errors?.['required']" i18n>
+                    Debes informar un tema...
+                </div>
             </div>
-            <div class="text-danger" *ngIf="submitted && form.controls['tema'].errors?.['required']" i18n>
-                Debes informar un tema...
-            </div>
+
               <div class="row">
 				<div class="col-12 mb-3">
 					<label for="isugerencia" i18n>Sugerencia</label>

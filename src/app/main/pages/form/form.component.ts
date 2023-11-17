@@ -5,7 +5,6 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { ITipos } from '../../api/models/i-tipos';
 import { TemasResourceService } from '../../api/resources/temas-resource.service';
 import { SugerenciasResourceService } from '../../api/resources/sugerencias-resource.service';
-import { ISugerencia } from '../../api/models/i-sugerencia';
 
 @Component({
   selector: 'app-form',
@@ -35,15 +34,15 @@ export class FormComponent {
 
   private initForm(): void {
     this.form = this._fb.group({
-      codTipoServicio: new FormControl('',[Validators.required]),
-      numeroTema: new FormControl('',[Validators.required]),
+      codTipoServicio: new FormControl('XX',[Validators.required]),
+      numeroTema: new FormControl('00',[Validators.required]),
       sugerencia: new FormControl('',[Validators.required]),
       identificacion: new FormControl('Si', [Validators.required]),
       email: new FormControl({ value: '', disabled: false }, [Validators.email, Validators.required]),
       tema: new FormControl('', [Validators.required])
 
     })
-    this.escucharCambiosRadio();
+    this.escucharCambios();
   }
 
   private vaciarForm(): void {
@@ -71,6 +70,7 @@ export class FormComponent {
     console.log(tipo.codTipoServicio)
     this._route.data.subscribe((data) => {
       this.tipos.push(...data["tipos"])
+
     })
   }
 
@@ -104,7 +104,7 @@ export class FormComponent {
   }
 
 
-  escucharCambiosRadio(): void {
+  escucharCambios(): void {
     this.form.controls['identificacion'].valueChanges.subscribe(valor => {
       if (valor  == 'No') {
         this.form.controls['email'].disable();
