@@ -9,6 +9,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FormComponent } from './pages/form/form.component';
 import { SugerenciasResourceService } from './api/resources/sugerencias-resource.service';
 import { SuccessComponent } from './pages/success/success.component';
+import { AppMessageService } from '../core/services/app-message.service';
 
 @NgModule({
   declarations: [
@@ -20,9 +21,11 @@ import { SuccessComponent } from './pages/success/success.component';
   providers: [
     TiposResourceService,
     TemasResourceService,
-    SugerenciasResourceService
+    SugerenciasResourceService,
+    AppMessageService,
   ],
   imports: [
+    
     CommonModule,
     MainRoutingModule,
     FormsModule,
